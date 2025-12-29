@@ -68,4 +68,9 @@ return [
     'next' => 'next',
     'of' => 'of',
     'previous' => 'previous',
+
+    // Posts
+    'posts_all' => 'All posts',
+    'posts_more' => 'More posts',
+    'posts_read_more' => 'Read more',
 ];

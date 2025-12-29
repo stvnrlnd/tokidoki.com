@@ -34,6 +34,15 @@ editor:
     - 'view contact form submissions'
     - 'delete contact form submissions'
     - 'access default site'
+    - 'view posts entries'
+    - 'edit posts entries'
+    - 'create posts entries'
+    - 'delete posts entries'
+    - 'publish posts entries'
+    - 'reorder posts entries'
+    - 'edit other authors posts entries'
+    - 'publish other authors posts entries'
+    - 'delete other authors posts entries'
 marketer:
   title: Marketer
   permissions:

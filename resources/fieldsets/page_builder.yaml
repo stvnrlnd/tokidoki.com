@@ -11,6 +11,25 @@ fields:
       display: 'Page builder'
       button_label: 'Add block'
       sets:
+        collections:
+          display: Collections
+          instructions: 'Colection based content.'
+          icon: addon-boxes-stack
+          sets:
+            index_content:
+              display: 'Index content'
+              instructions: 'Render the currently mounted entries if available.'
+              icon: file-content-list
+              fields:
+                -
+                  import: index_content
+            posts:
+              display: Posts
+              instructions: 'List the most recent Posts.'
+              icon: share-mega-phone
+              fields:
+                -
+                  import: posts
         image_and_text:
           display: 'Image and text'
           instructions: 'Image and text based blocks.'
