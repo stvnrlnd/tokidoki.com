@@ -1,4 +1,3 @@
-<!-- /vendor/statamic/forms/fields/textarea.antlers.html -->
 <textarea
     x-model="form.{{ handle }}"
     @change="form.validate('{{ handle }}')"
@@ -16,4 +15,3 @@
     {{ character_limit ?= 'maxlength="{character_limit}"' }}
     {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
 >{{ old }}</textarea>
-<!-- End: /vendor/statamic/forms/fields/textarea.antlers.html -->

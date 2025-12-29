@@ -6,7 +6,6 @@
     @param explainer_open The text explaining that the consent banner will be opened. Displayed when the consent banner is hidden. Defaults to `trans:strings.consent_embeds_open`.
 #}}
 
-<!-- /components/_consent_gate.antlers.html -->
 {{ _consent_embeds =
     (environment == 'local' && seo:trackers_local && seo:embeds) or
     (environment == 'staging' && seo:trackers_staging && seo:embeds) or
@@ -39,4 +38,3 @@
 
     {{ slot:append }}
 </div>
-<!-- End: /components/_consent_gate.antlers.html -->

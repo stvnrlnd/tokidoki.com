@@ -1,4 +1,3 @@
-<!-- /vendor/statamic/forms/fields/assets.antlers.html -->
 <input
     @change="form.{{ handle }} = Object.values($event.target.files)"
     :aria-invalid="form.invalid('{{ handle }}')"
@@ -12,4 +11,3 @@
     {{ /if }}
     {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
 >
-<!-- End: /vendor/statamic/forms/fields/assets.antlers.html -->
