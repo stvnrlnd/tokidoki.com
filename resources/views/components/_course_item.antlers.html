@@ -1,0 +1,43 @@
+{{#
+    @name Course item
+    @desc A Course item component.
+    @param class Add optional CSS classes.
+#}}
+
+<article class="flex flex-col {{ class }}">
+    {{ if image }}
+        <figure class="mb-4">
+            {{ partial:statamic-peak-tools::components/picture :image="image" sizes="(min-width: 1280px) 430px, (min-width: 768px) 30vw, 90vw" aspect_ratio="3/2" lazy="true" cover="true" class="aspect-[3/2]" }}
+        </figure>
+    {{ /if }}
+
+    <div class="flex flex-col gap-y-2">
+        <a href="{{ url }}" class="group">
+            {{ partial:typography/h2 :content="title" class="group-hover:text-primary motion-safe:transition-colors text-9xl" }}
+        </a>
+
+        {{ partial:typography/p :content="teaser" class="prose-xl" }}
+    </div>
+
+    {{ if sections }}
+        <div class="mt-12 grid grid-cols-12 gap-fluid-grid-gap">
+            {{ sections }}
+                <div class="flex flex-col gap-y-2 md:col-span-6">
+                    {{ partial:typography/h3 :content="heading" class="underline decoration-primary decoration-6 underline-offset-2" }}
+
+                    {{ partial:typography/p :content="description" }}
+
+                    <ol class="list-decimal list-inside">
+                        {{ lessons }}
+                            <li class="mb-1">
+                                <a href="{{ url }}" class="motion-safe:transition-colors text-primary hover:text-neutral font-bold text-xs">
+                                    {{ title }}
+                                </a>
+                            </li>
+                        {{ /lessons }}
+                    </ol>
+                </div>
+            {{ /sections }}
+        </div>
+    {{ /if }}
+</article>

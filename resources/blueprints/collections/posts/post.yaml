@@ -1,9 +1,10 @@
-title: Posts
+title: Post
 tabs:
   main:
     display: Main
     sections:
       -
+        display: Page
         fields:
           -
             handle: title
@@ -17,20 +18,12 @@ tabs:
                 - required
           -
             handle: subtitle
-            field:
-              type: textarea
+            field: common.text_plain
+            config:
               display: Subtitle
       -
         display: Content
         fields:
-          -
-            handle: teaser
-            field: common.text_plain
-            config:
-              display: Teaser
-              validate:
-                - required
-              character_limit: '250'
           -
             handle: article
             field: article.article
@@ -47,6 +40,14 @@ tabs:
                 - anchor
               validate:
                 - required
+          -
+            handle: teaser
+            field: common.text_plain
+            config:
+              display: Teaser
+              validate:
+                - required
+              character_limit: '250'
   seo:
     display: SEO
     sections:

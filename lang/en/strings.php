@@ -43,6 +43,12 @@ return [
     'consent_change_preferences' => 'Manage consent',
     'consent_more_info' => 'More information',
 
+    // Courses
+    'courses_all' => 'All courses',
+    'courses_more' => 'More courses',
+    'courses_read_more' => 'Read more',
+    'courses_not_found' => 'There are currently no courses.',
+
     // Footer
     'on' => 'on',
 
@@ -61,7 +67,6 @@ return [
     'collection_mounted' => 'Your entry :title has a collection mounted and can\'t be deleted.',
     'external_link' => '(external link)',
     'home' => 'Homepage',
-    'no_results' => 'There are currently no posts.',
     'no_script' => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 
     // Pagination
@@ -73,4 +78,5 @@ return [
     'posts_all' => 'All posts',
     'posts_more' => 'More posts',
     'posts_read_more' => 'Read more',
+    'posts_not_found' => 'There are currently no posts.',
 ];

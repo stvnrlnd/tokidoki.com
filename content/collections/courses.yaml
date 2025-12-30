@@ -1,0 +1,16 @@
+title: Courses
+template: courses/show
+layout: layout
+mount: 094422cb-9fbf-432d-8d7d-f4658576d6e4
+revisions: false
+route: '/{mount}/{slug}'
+date: true
+sort_dir: desc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

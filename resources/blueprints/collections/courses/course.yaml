@@ -1,0 +1,131 @@
+title: Course
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Page
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              listable: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: subtitle
+            field: common.text_plain
+            config:
+              display: Subtitle
+      -
+        display: Content
+        fields:
+          -
+            handle: article
+            field: article.article
+            config:
+              validate:
+                - required
+          -
+            handle: teaser
+            field: common.text_plain
+            config:
+              display: Teaser
+              character_limit: 250
+              validate:
+                - required
+      -
+        display: Relations
+        fields:
+          -
+            handle: sections
+            field:
+              type: replicator
+              display: Sections
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    section:
+                      display: Section
+                      fields:
+                        -
+                          handle: heading
+                          field:
+                            type: text
+                            display: Heading
+                            validate:
+                              - required
+                        -
+                          handle: description
+                          field: common.text_plain
+                          config:
+                            display: Description
+                        -
+                          handle: lessons
+                          field:
+                            collections:
+                              - posts
+                            type: entries
+                            display: Lessons
+                            validate:
+                              - required
+  seo:
+    display: SEO
+    sections:
+      -
+        display: Basic
+        instructions: 'Basic SEO settings.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_basic'
+      -
+        display: Advanced
+        instructions: 'Advanced SEO settings.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_advanced'
+      -
+        display: 'Open Graph'
+        instructions: 'Open Graph meta tags for social sharing.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_open_graph'
+      -
+        display: Sitemap
+        instructions: 'Sitemap configuration.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_sitemap'
+      -
+        display: 'JSON-ld Schema'
+        instructions: 'Custom JSON-ld schema objects.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_jsonld'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        display: Meta
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - required
+              display: Slug
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required

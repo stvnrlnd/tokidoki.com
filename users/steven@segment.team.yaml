@@ -4,3 +4,11 @@ id: faca52e9-e9c6-4f99-8f50-676c5a8d2ae0
 password_hash: $2y$12$3wx/6xxgxesiy6chClSxj.bG9JnIV/Q2ndPCWOureM95BdQwJrqni
 preferences:
   theme: light
+  collections:
+    posts:
+      columns:
+        - status
+        - date
+        - title
+        - image
+        - og_image

@@ -43,6 +43,15 @@ editor:
     - 'edit other authors posts entries'
     - 'publish other authors posts entries'
     - 'delete other authors posts entries'
+    - 'view courses entries'
+    - 'edit courses entries'
+    - 'create courses entries'
+    - 'delete courses entries'
+    - 'publish courses entries'
+    - 'reorder courses entries'
+    - 'edit other authors courses entries'
+    - 'publish other authors courses entries'
+    - 'delete other authors courses entries'
 marketer:
   title: Marketer
   permissions:

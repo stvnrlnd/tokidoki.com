@@ -15,11 +15,11 @@
         {{ collection:posts sort="date:desc" paginate="true" limit="12" as="items" }}
             {{ unless no_results }}
                 {{ items }}
-                    {{ partial:components/posts_item class="md:col-span-4" }}
+                    {{ partial:components/post_item class="md:col-span-6" }}
                 {{ /items }}
             {{ else }}
                 <div class="md:col-span-6">
-                    {{ trans:strings.no_results }}
+                    {{ trans:strings.posts_not_found }}
                 </div>
             {{ /unless }}
 
