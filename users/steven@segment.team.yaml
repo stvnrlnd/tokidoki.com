@@ -8,7 +8,7 @@ preferences:
     posts:
       columns:
         - status
-        - date
         - title
+        - date
         - image
         - og_image

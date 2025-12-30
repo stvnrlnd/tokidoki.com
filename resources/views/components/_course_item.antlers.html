@@ -27,15 +27,19 @@
 
                     {{ partial:typography/p :content="description" }}
 
-                    <ol class="list-decimal list-inside">
-                        {{ lessons }}
-                            <li class="mb-1">
-                                <a href="{{ url }}" class="motion-safe:transition-colors text-primary hover:text-neutral font-bold text-xs">
-                                    {{ title }}
-                                </a>
-                            </li>
-                        {{ /lessons }}
-                    </ol>
+                    {{ if lessons }}
+                        <ol class="list-decimal list-inside">
+                            {{ lessons }}
+                                <li class="mb-1">
+                                    <a href="{{ url }}" class="motion-safe:transition-colors text-primary hover:text-neutral font-bold text-xs">
+                                        {{ title }}
+                                    </a>
+                                </li>
+                            {{ /lessons }}
+                        </ol>
+                    {{ else }}
+                        {{ partial:typography/p content="Coming Soon!" }}
+                    {{ /if }}
                 </div>
             {{ /sections }}
         </div>

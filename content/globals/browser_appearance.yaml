@@ -4,7 +4,9 @@ data:
   disable_email_detection: false
   disable_address_detection: false
   display_standalone: false
-  use_theme_color: false
+  use_theme_color: true
+  use_theme_color_dark_mode: false
+  theme_color: '#f1f5f9'
   use_favicons: true
   svg: tokidoki-logomark-light.svg
-  background: '#ffffff'
+  background: '#f1f5f9'
