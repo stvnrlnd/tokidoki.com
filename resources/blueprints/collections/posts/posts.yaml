@@ -4,19 +4,25 @@ tabs:
     display: Main
     sections:
       -
-        display: News
         fields:
           -
             handle: title
             field:
               type: text
               required: true
-              input_type: text
               localizable: true
               listable: true
               display: Title
               validate:
                 - required
+          -
+            handle: subtitle
+            field:
+              type: textarea
+              display: Subtitle
+      -
+        display: Content
+        fields:
           -
             handle: teaser
             field: common.text_plain
@@ -74,6 +80,63 @@ tabs:
         fields:
           -
             import: 'statamic-peak-seo::seo_jsonld'
+  sharing:
+    display: Sharing
+    sections:
+      -
+        display: 'Social Media'
+        fields:
+          -
+            handle: posts
+            field:
+              type: replicator
+              display: Posts
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    post:
+                      display: Post
+                      fields:
+                        -
+                          handle: content
+                          field:
+                            type: textarea
+                            display: Content
+                            validate:
+                              - required
+                        -
+                          handle: published_to
+                          field:
+                            type: select
+                            display: 'Published To'
+                            width: 50
+                            options:
+                              -
+                                key: x
+                                value: 'X (Twitter)'
+                              -
+                                key: facebook
+                                value: Facebook
+                              -
+                                key: threads
+                                value: Threads
+                              -
+                                key: mastodon
+                                value: Mastodon
+                              -
+                                key: linkedin
+                                value: LinkedIn
+                            taggable: true
+                            validate:
+                              - required
+                        -
+                          handle: published_at
+                          field:
+                            time_enabled: true
+                            type: date
+                            display: 'Published At'
+                            width: 50
   sidebar:
     display: Sidebar
     sections:
@@ -85,34 +148,25 @@ tabs:
             field:
               type: slug
               localizable: true
-              generate: true
-              listable: hidden
-              display: Slug
               validate:
                 - required
+              display: Slug
           -
             handle: date
             field:
               type: date
               required: true
+              default: now
               listable: true
               validate:
                 - required
               display: Date
-              mode: single
-              time_enabled: false
               time_required: false
               earliest_date: '2021-01-01'
-              full_width: false
-              inline: false
-              columns: 1
-              rows: 1
           -
             handle: image
             field: common.image
             config:
               mode: grid
-              width: 100
               listable: true
-              validate:
-                - required
+              width: 100

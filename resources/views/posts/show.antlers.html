@@ -3,7 +3,6 @@
     @desc The Posts show template.
 #}}
 
-<!-- /posts/show.antlers.html -->
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -38,9 +37,15 @@
 
             {{ partial:typography/h1 :content="title" class="text-center" }}
 
-            <figure>
-                {{ partial:statamic-peak-tools::components/picture :image="image" sizes="(min-width: 1280px) 1150px, (min-width: 768px) 90vw" aspect_ratio="3/2" lazy="true" cover="true" class="aspect-[3/2]" }}
-            </figure>
+            {{ if subtitle }}
+                {{ partial:typography/p :content="subtitle" class="block text-center prose-lg" }}
+            {{ /if }}
+
+            {{ if image }}
+                <figure>
+                    {{ partial:statamic-peak-tools::components/picture :image="image" sizes="(min-width: 1280px) 1150px, (min-width: 768px) 90vw" aspect_ratio="3/2" lazy="true" cover="true" class="aspect-[3/2]" }}
+                </figure>
+            {{ /if }}
         </header>
     </div>
 
@@ -66,4 +71,3 @@
         {{ /unless }}
     {{ /collection:previous }}
 </main>
-<!-- /posts/show.antlers.html -->
