@@ -11,18 +11,18 @@
         </figure>
     {{ /if }}
 
-    <div class="flex flex-col gap-y-2">
+    <div class="space-y-2">
         <a href="{{ url }}" class="group">
-            {{ partial:typography/h2 :content="title" class="group-hover:text-primary motion-safe:transition-colors text-9xl" }}
+            {{ partial:typography/h2 :content="title" class="group-hover:text-primary motion-safe:transition-colors lg:text-7xl xl:text-9xl" }}
         </a>
 
-        {{ partial:typography/p :content="teaser" class="prose-xl" }}
+        {{ partial:typography/p :content="teaser" class="xl:prose-xl" }}
     </div>
 
     {{ if sections }}
         <div class="mt-12 grid grid-cols-12 gap-fluid-grid-gap">
             {{ sections }}
-                <div class="flex flex-col gap-y-2 md:col-span-6">
+                <div class="col-span-12 sm:col-span-6 space-y-2">
                     {{ partial:typography/h3 :content="heading" class="underline decoration-primary decoration-6 underline-offset-2" }}
 
                     {{ partial:typography/p :content="description" }}
@@ -31,7 +31,7 @@
                         <ol class="list-decimal list-inside">
                             {{ lessons }}
                                 <li class="mb-1">
-                                    <a href="{{ url }}" class="motion-safe:transition-colors text-primary hover:text-neutral font-bold text-xs">
+                                    <a href="{{ url }}" class="motion-safe:transition-colors text-primary hover:text-neutral font-bold md:text-xs">
                                         {{ title }}
                                     </a>
                                 </li>

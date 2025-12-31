@@ -10,18 +10,16 @@
 </main>
 
 {{ section:index_content }}
-    <div class="span-content grid grid-cols-12 gap-fluid-grid-gap">
+    <div class="span-content">
         {{ collection:courses sort="title" paginate="true" limit="10" as="items" }}
             {{ unless no_results }}
                 {{ items }}
-                    {{ partial:components/course_item class="md:col-span-12" }}
+                    {{ partial:components/course_item }}
                 {{ /items }}
+                {{ partial:statamic-peak-tools::components/pagination }}
             {{ else }}
-                <div class="col-span-12">
-                    {{ trans:strings.courses_not_found }}
-                </div>
+                {{ trans:strings.courses_not_found }}
             {{ /unless }}
-            {{ partial:statamic-peak-tools::components/pagination class="col-span-12" }}
         {{ /collection:courses }}
     </div>
 {{ /section:index_content }}

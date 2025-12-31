@@ -32,7 +32,7 @@
 
 <main class="py-12 md:py-16 lg:py-24 stack-12 md:stack-16 lg:stack-24" id="content">
     <div class="fluid-grid stack-8">
-        <header class="md:col-start-[col-3] md:col-span-8 stack-4">
+        <header class="span-content md:col-start-[col-3] md:col-span-8 stack-4">
             {{ partial:typography/time :content="date" class="block text-center" }}
 
             {{ partial:typography/h1 :content="title" class="text-center" }}
@@ -50,24 +50,24 @@
     </div>
 
     <section class="fluid-grid">
-        {{ partial:typography/prose as="article" class="contents" }}
-            {{ article }}
-                {{ partial src="components/{type}" }}
-            {{ /article }}
-        {{ /partial:typography/prose }}
+        <div class="span-content grid md:grid-cols-subgrid gap-fluid-grid-gap">
+            <div class="col-span-12 md:col-span-8">
+                {{ partial:typography/prose as="article" class="contents" }}
+                    {{ article }}
+                        {{ partial src="components/{type}" }}
+                    {{ /article }}
+                {{ /partial:typography/prose }}
+            </div>
+            {{ collection:previous in="posts" sort="date:asc" limit="3" as="items" }}
+                {{ unless no_results }}
+                    <div class="col-span-12 md:col-span-4 space-y-6">
+                        <h6 class="text-sm text-primary-400 uppercase font-bold">{{ trans:strings.posts_more }}</h6>
+                        {{ items }}
+                            {{ partial:components/post_item class="" }}
+                        {{ /items }}
+                    </div>
+                {{ /unless }}
+            {{ /collection:previous }}
+        </div>
     </section>
-
-    {{ collection:previous in="posts" sort="date:asc" limit="3" as="items" }}
-        {{ unless no_results }}
-            <section class="fluid-grid">
-                <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
-                    {{ partial:typography/h1 as="h2" content="{ trans:strings.posts_more }" class="md:col-span-12" }}
-
-                    {{ items }}
-                        {{ partial:components/post_item class="md:col-span-4" }}
-                    {{ /items }}
-                </div>
-            </section>
-        {{ /unless }}
-    {{ /collection:previous }}
 </main>
