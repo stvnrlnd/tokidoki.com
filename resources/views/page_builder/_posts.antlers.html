@@ -8,7 +8,7 @@
     <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
         {{ title ?= { partial:typography/h1 as="h2" :content="title" class="md:col-span-12" } }}
 
-        {{ collection:posts sort="date:desc" limit="3" as="items" }}
+        {{ collection:posts sort="date:desc" limit="4" as="items" }}
             {{ unless no_results }}
                 {{ items }}
                     {{ partial:components/post_item class="md:col-span-6" }}
