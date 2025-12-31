@@ -171,3 +171,10 @@ tabs:
               mode: grid
               listable: true
               width: 100
+          -
+            handle: authors
+            field:
+              default:
+                - faca52e9-e9c6-4f99-8f50-676c5a8d2ae0
+              type: users
+              display: Authors
