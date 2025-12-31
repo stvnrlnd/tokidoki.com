@@ -17,13 +17,13 @@
                 {{ items }}
                     {{ partial:components/post_item class="md:col-span-6" }}
                 {{ /items }}
+
+                {{ partial:statamic-peak-tools::components/pagination class="md:col-span-12" }}
             {{ else }}
                 <div class="md:col-span-6">
                     {{ trans:strings.posts_not_found }}
                 </div>
             {{ /unless }}
-
-            {{ partial:statamic-peak-tools::components/pagination class="md:col-span-12" }}
         {{ /collection:posts }}
     </div>
 {{ /section:index_content }}
