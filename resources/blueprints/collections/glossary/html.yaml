@@ -1,0 +1,186 @@
+title: HTML
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: true
+              listable: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: teaser
+            field: common.text_plain
+            config:
+              display: Teaser
+              validate:
+                - required
+              character_limit: 250
+          -
+            handle: reference_title
+            field:
+              type: code
+              display: 'Reference Title'
+          -
+            handle: article
+            field: article.article
+            config:
+              buttons:
+                - h2
+                - h3
+                - h4
+                - h5
+                - h6
+                - bold
+                - underline
+                - italic
+                - unorderedlist
+                - orderedlist
+                - quote
+                - removeformat
+                - anchor
+                - code
+                - codeblock
+                - horizontalrule
+              validate:
+                - required
+          -
+            handle: link
+            field:
+              type: link
+              display: Link
+  seo:
+    display: SEO
+    sections:
+      -
+        display: Basic
+        instructions: 'Basic SEO settings.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_basic'
+      -
+        display: Advanced
+        instructions: 'Advanced SEO settings.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_advanced'
+      -
+        display: 'Open Graph'
+        instructions: 'Open Graph meta tags for social sharing.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_open_graph'
+      -
+        display: Sitemap
+        instructions: 'Sitemap configuration.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_sitemap'
+      -
+        display: 'JSON-ld Schema'
+        instructions: 'Custom JSON-ld schema objects.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_jsonld'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        display: Meta
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - required
+              display: Slug
+          -
+            handle: date
+            field:
+              type: date
+              default: now
+              listable: true
+              validate:
+                - required
+              display: Date
+              time_required: false
+              earliest_date: '2021-01-01'
+          -
+            handle: image
+            field: common.image
+            config:
+              mode: grid
+              listable: true
+              width: 100
+          -
+            handle: comments_allowed
+            field:
+              default: true
+              type: toggle
+              display: 'Allow Comments'
+          -
+            handle: group
+            field:
+              options:
+                -
+                  key: content_sectioning
+                  value: 'Content Sectioning'
+                -
+                  key: text_content
+                  value: 'Text Content'
+                -
+                  key: inline_text_semantics
+                  value: 'Inline Text Semantics'
+                -
+                  key: image_and_multimedia
+                  value: 'Image and Multimedia'
+                -
+                  key: embedded_content
+                  value: 'Embedded Content'
+                -
+                  key: forms_and_input
+                  value: 'Forms and Input'
+                -
+                  key: interactive
+                  value: Interactive
+                -
+                  key: obsolete_and_depricated
+                  value: 'Obsolete and Deprecated'
+                -
+                  key: table_content
+                  value: 'Table Content'
+                -
+                  key: document_metadata
+                  value: 'Document Metadata'
+                -
+                  key: scripting
+                  value: Scripting
+                -
+                  key: ruby_annotations
+                  value: 'Ruby Annotations'
+                -
+                  key: document_structure
+                  value: 'Document Structure'
+                -
+                  key: lists
+                  value: Lists
+                -
+                  key: time_and_date
+                  value: 'Time and Date'
+                -
+                  key: generic_containers
+                  value: 'Generic Containers'
+                -
+                  key: figures_and_captions
+                  value: 'Figures and Captions'
+              type: select
+              display: Group

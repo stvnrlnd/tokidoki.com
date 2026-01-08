@@ -14,21 +14,27 @@ fields:
         - quote
         - removeformat
         - anchor
-      save_html: false
-      toolbar_mode: fixed
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
+        - h4
+        - h5
+        - h6
+        - underline
+        - strikethrough
+        - table
+        - image
+        - code
+        - codeblock
+        - horizontalrule
       reading_time: true
-      fullscreen: true
-      allow_source: true
       type: bard
       localizable: true
-      listable: hidden
       display: Article
       replicator_preview: false
       validate:
         - required
+      container: files
+      always_save: false
+      remove_empty_nodes: true
+      smart_typography: true
       sets:
         interactive:
           display: Interactive
@@ -47,6 +53,13 @@ fields:
           instructions: 'Text based sets.'
           icon: text-formatting-initial-letter
           sets:
+            code_example:
+              display: 'Code Example'
+              instructions: 'Renders a code example block'
+              icon: programming-script-code-brackets
+              fields:
+                -
+                  import: code_example
             pull_quote:
               display: 'Pull quote'
               instructions: 'Add a pull quote with an optional author.'
@@ -80,16 +93,3 @@ fields:
               fields:
                 -
                   import: video
-      container: files
-      enable_input_rules: true
-      enable_paste_rules: true
-      instructions_position: above
-      visibility: visible
-      always_save: false
-      previews: true
-      antlers: false
-      remove_empty_nodes: true
-      collapse: false
-      smart_typography: true
-      inline: false
-      hide_display: false

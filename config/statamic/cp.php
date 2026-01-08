@@ -61,12 +61,17 @@ return [
         [
             'type' => 'collection',
             'collection' => 'posts',
-            'width' => 50
+            'width' => 50,
         ],
         [
             'type' => 'collection',
             'collection' => 'courses',
-            'width' => 50
+            'width' => 50,
+        ],
+         [
+            'type' => 'collection',
+            'collection' => 'glossary',
+            'width' => 50,
         ],
         [
             'type' => 'form',

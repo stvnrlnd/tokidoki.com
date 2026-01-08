@@ -1,0 +1,7 @@
+title: 'Code Example'
+fields:
+  -
+    handle: code_snippet
+    field:
+      type: code
+      display: 'Code Snippet'

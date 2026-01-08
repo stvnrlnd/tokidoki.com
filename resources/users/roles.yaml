@@ -52,6 +52,15 @@ editor:
     - 'edit other authors courses entries'
     - 'publish other authors courses entries'
     - 'delete other authors courses entries'
+    - 'view glossary entries'
+    - 'edit glossary entries'
+    - 'create glossary entries'
+    - 'delete glossary entries'
+    - 'publish glossary entries'
+    - 'reorder glossary entries'
+    - 'edit other authors glossary entries'
+    - 'publish other authors glossary entries'
+    - 'delete other authors glossary entries'
 marketer:
   title: Marketer
   permissions:

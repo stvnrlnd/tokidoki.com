@@ -52,6 +52,10 @@ return [
     // Footer
     'on' => 'on',
 
+    // Glossary
+    'glossary_not_found' => 'There are currently no glossary entries.',
+    'glossary_more' => 'More glossary entries',
+
     // Navigation
     'close' => 'Close',
     'main_navigation_desktop' => 'Main navigation desktop',

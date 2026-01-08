@@ -1,0 +1,12 @@
+title: Glossary
+route: '/{mount}/{slug}'
+layout: layout
+template: glossary/show
+revisions: false
+date: false
+sort_dir: desc
+date_behavior:
+  past: 
+  future: 
+mount: 4e7e2722-121a-4d9a-b1ad-58b36ad35bf0
+slugs: true
